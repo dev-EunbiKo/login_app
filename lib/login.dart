@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:login_app/widget/my_textfield.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -47,42 +48,9 @@ class _LoginState extends State<Login> {
                 style: TextStyle(color: Colors.grey[700]),
               ).animate().fade(delay: 500.ms).slideX(begin: 2, end: 0),
               const SizedBox(height: 25),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: TextField(
-                  decoration: InputDecoration(
-                    enabledBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey.shade400),
-                    ),
-                    fillColor: Colors.grey.shade200,
-                    filled: true,
-                    hintText: "UserName",
-                    hintStyle: TextStyle(color: Colors.grey[500]),
-                  ),
-                ),
-              ),
+              MyTextfield(hintText: "UserName", obscureText: false),
               const SizedBox(height: 25),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: TextField(
-                  obscureText: true, // 패스워드 보안
-                  decoration: InputDecoration(
-                    enabledBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey.shade400),
-                    ),
-                    fillColor: Colors.grey.shade200,
-                    filled: true,
-                    hintText: "Password",
-                    hintStyle: TextStyle(color: Colors.grey[500]),
-                  ),
-                ),
-              ),
+              MyTextfield(hintText: "Password", obscureText: true),
             ],
           ),
         ),
