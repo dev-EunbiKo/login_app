@@ -51,6 +51,81 @@ class _LoginState extends State<Login> {
               MyTextfield(hintText: "UserName", obscureText: false),
               const SizedBox(height: 25),
               MyTextfield(hintText: "Password", obscureText: true),
+              const SizedBox(height: 25),
+              Container(
+                width: 120,
+                height: 50,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white),
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.orange[300],
+                ),
+                child: const Icon(
+                  Icons.arrow_forward,
+                ).animate().fade(delay: 1000.ms),
+              ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Not a member?",
+                    style: TextStyle(color: Colors.grey[700]),
+                  ).animate().fade().slideX(
+                    begin: -3,
+                    end: 0,
+                    duration: 300.ms,
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      "Register Now",
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ).animate().fade().slideX(begin: 3, end: 0, duration: 300.ms),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Column(
+                    children: [
+                      const SizedBox(height: 30),
+                      const Text(
+                        "Powered by CodingChef",
+                        style: TextStyle(fontSize: 11),
+                      ).animate().fade().slideX(
+                        begin: -3,
+                        end: 0,
+                        delay: 300.ms,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(width: 10),
+                  Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.white),
+                          borderRadius: BorderRadius.circular(16),
+                          color: Colors.grey[200],
+                          image: const DecorationImage(
+                            image: AssetImage('images/codingchef3.png'),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      )
+                      .animate()
+                      .slideX(begin: 3, end: 0, duration: 300.ms)
+                      .animate(onPlay: (controller) => controller.repeat())
+                      .shimmer(delay: 1000.ms, duration: 1800.ms),
+                  const SizedBox(width: 20),
+                ],
+              ),
             ],
           ),
         ),
